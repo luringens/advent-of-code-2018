@@ -1,0 +1,8 @@
+[package]
+name = "day_4"
+version = "0.1.0"
+authors = ["Stian Soltvedt <stian@soltvedt.info>"]
+edition = "2018"
+
+[dependencies]
+chrono = "0.4"
