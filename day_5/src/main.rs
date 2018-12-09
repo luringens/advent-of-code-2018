@@ -11,7 +11,10 @@ fn main() {
     let mut shortest = collapsed.len();
     for letter_lower in letters {
         let letter_upper = letter_lower.to_uppercase().next().unwrap();
-        let filtered: String = collapsed.chars().filter(|c| *c != letter_lower && *c != letter_upper).collect();
+        let filtered: String = collapsed
+            .chars()
+            .filter(|c| *c != letter_lower && *c != letter_upper)
+            .collect();
         let result = collapse(filtered.as_ref());
         shortest = shortest.min(result.len());
     }

@@ -14,7 +14,9 @@ fn task_1() {
         for c in line.chars() {
             match map.get_mut(&c) {
                 Some(num) => *num += 1,
-                None => { map.insert(c, 1); },
+                None => {
+                    map.insert(c, 1);
+                }
             }
         }
         if map.iter().find(|(_, n)| **n == 2).is_some() {
@@ -41,17 +43,14 @@ fn task_2() {
 }
 
 fn compare(fst: &str, snd: &str) -> bool {
-    fst.chars()
-       .zip(snd.chars())
-       .filter(|(a, b)| a == b)
-       .count() == fst.len() - 1
+    fst.chars().zip(snd.chars()).filter(|(a, b)| a == b).count() == fst.len() - 1
 }
 
 fn same_chars(fst: &str, snd: &str) -> String {
     fst.chars()
-       .zip(snd.chars())
-       .filter(|(a, b)| a == b)
-       .map(|(a, _)| a)
-       .collect()
-       //.fold(String::new(), |acc, (a, _)| { acc.push(a); acc })
+        .zip(snd.chars())
+        .filter(|(a, b)| a == b)
+        .map(|(a, _)| a)
+        .collect()
+    //.fold(String::new(), |acc, (a, _)| { acc.push(a); acc })
 }

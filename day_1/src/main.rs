@@ -2,10 +2,7 @@ use std::str::FromStr;
 const DATA: &'static str = include_str!("../input");
 
 fn main() {
-    let result = DATA
-        .lines()
-        .map(|s| line_to_num(s))
-        .sum::<i32>();
+    let result = DATA.lines().map(|s| line_to_num(s)).sum::<i32>();
     println!("Task 1: {}", result);
 
     let mut map = std::collections::HashMap::new();
